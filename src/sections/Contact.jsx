@@ -10,24 +10,18 @@ export default function Contact() {
   });
 
   const [errors, setErrors] = useState({});
+  const [submitted, setSubmitted] = useState(false);
 
   const validate = () => {
     const newErrors = {};
 
-    if (!formData.name.trim()) {
-      newErrors.name = 'El nombre es requerido.';
-    }
-
+    if (!formData.name.trim()) newErrors.name = 'El nombre es requerido.';
     if (!formData.email.trim()) {
       newErrors.email = 'El correo es requerido.';
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = 'El correo no es válido.';
     }
-
-    if (!formData.subject.trim()) {
-      newErrors.subject = 'El asunto es requerido.';
-    }
-
+    if (!formData.subject.trim()) newErrors.subject = 'El asunto es requerido.';
     if (!formData.message.trim()) {
       newErrors.message = 'El mensaje es requerido.';
     } else if (formData.message.trim().length < 10) {
@@ -42,20 +36,36 @@ export default function Contact() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      alert('Mensaje enviado correctamente');
-      // Aquí puedes integrar EmailJS o similar
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
+      try {
+        const response = await fetch('https://formspree.io/f/mldnoodr', { // Reemplaza con tu URL
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+          setSubmitted(true);
+          setFormData({
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
+          });
+          setErrors({});
+        } else {
+          alert('Hubo un problema al enviar el mensaje.');
+        }
+      } catch (error) {
+        alert('Error de red. Inténtalo más tarde.');
+      }
     }
   };
 
@@ -118,7 +128,11 @@ export default function Contact() {
             {errors.message && <span className="form__error">{errors.message}</span>}
           </div>
 
-          <button type="submit" className="contact__submit">Enviar mensaje</button>
+          <div className="form__group">
+            <button type="submit" className="contact__submit">Enviar mensaje</button>
+          </div>
+
+          {submitted && <p className="form__success">¡Tu mensaje fue enviado con éxito!</p>}
         </form>
       </div>
     </section>
