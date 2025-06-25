@@ -1,0 +1,52 @@
+.footer {
+    background-color: #121212;
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer__container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer__subtitle {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.footer__network {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.title__network-item a {
+    font-size: 1.5rem;
+    color: #00ffe7;
+    transition: color 0.3s;
+}
+
+.title__network-item a:hover {
+    color: #ffffff;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 600px) {
+    .footer__subtitle {
+        font-size: 0.9rem;
+    }
+
+    .title__network-item a {
+        font-size: 1.2rem;
+    }
+}

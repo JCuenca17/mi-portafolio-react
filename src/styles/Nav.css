@@ -1,0 +1,85 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar principal */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #121212;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    z-index: 1000;
+}
+
+/* Logo */
+.navbar__logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00ffe7;
+}
+
+/* Links principales */
+.navbar__links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar__links a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.navbar__links a:hover {
+    color: #00ffe7;
+}
+
+/* Botón menú hamburguesa */
+.navbar__toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar__links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #121212;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0;
+        display: none;
+    }
+
+    .navbar__links.open {
+        display: flex;
+    }
+
+    .navbar__toggle {
+        display: flex;
+    }
+}
