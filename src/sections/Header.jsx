@@ -11,7 +11,7 @@ export default function Header() {
         <div className="header__buttons">
           <a
             className="header__cv"
-            href="https://drive.google.com/file/d/10ADoGnK3hQj5ChjSOA7i9mHcGL8wGoHX/view?usp=sharing"
+            href="https://drive.google.com/file/d/1WZzcWQzharChc4MeeCKhOt9VMReg0ixI/view?usp=drive_link"
             target="_blank"
             rel="noreferrer"
           >
