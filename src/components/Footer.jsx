@@ -15,7 +15,7 @@ export default function Footer() {
               </a>
             </li>
             <li className="title__network-item">
-              <a href="https://www.linkedin.com/in/jcuenca17/" target="_blank" rel="noreferrer">
+              <a href="https://www.linkedin.com/in/josecuencag/" target="_blank" rel="noreferrer">
                 <FaLinkedin />
               </a>
             </li>

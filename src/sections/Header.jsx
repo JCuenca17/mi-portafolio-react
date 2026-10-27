@@ -21,7 +21,7 @@ export default function Header() {
 
         <ul className="header__social">
           <li><a href="https://github.com/JCuenca17" target="_blank" rel="noreferrer"><FaGithub /></a></li>
-          <li><a href="https://www.linkedin.com/in/jcuenca17/" target="_blank" rel="noreferrer"><FaLinkedin /></a></li>
+          <li><a href="https://www.linkedin.com/in/josecuencag/" target="_blank" rel="noreferrer"><FaLinkedin /></a></li>
           <li><a href="https://www.instagram.com/josecuencag/" target="_blank" rel="noreferrer"><FaInstagram /></a></li>
         </ul>
       </div>

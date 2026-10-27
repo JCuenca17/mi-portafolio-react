@@ -1,12 +1,33 @@
-# React + Vite
+# Portafolio en React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portafolio personal de una sola página que hice en junio de 2025 para practicar React. Tiene presentación, sobre mí, habilidades, formación con enlaces a los certificados y un formulario de contacto. Mi portafolio actual es otro: [portafolio-jlcg.vercel.app](https://portafolio-jlcg.vercel.app/).
 
-Currently, two official plugins are available:
+![Portada](docs/portada.jpg)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Qué tiene
 
-## Expanding the ESLint configuration
+- Cada sección es un componente (`src/sections/`) con su propia hoja de estilos en `src/styles/`.
+- Menú fijo que en el celular se vuelve un botón desplegable.
+- Formulario de contacto que valida los campos y envía el mensaje con Formspree.
+- Habilidades con íconos de `react-icons` y nivel de cada una.
+- Línea de tiempo de formación con el logo de cada institución.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+![Sobre mí y habilidades](docs/sobre-mi.jpg)
+
+<p>
+<img src="docs/formacion.jpg" alt="Formación académica" width="70%">
+<img src="docs/movil.jpg" alt="Vista en el celular" width="26%">
+</p>
+
+## Tecnologías
+
+React 19 con Vite y CSS propio, sin librerías de componentes.
+
+## Ejecutarlo
+
+```
+npm install
+npm run dev
+```
+
+Se abre en `http://localhost:5173/mi-portafolio-react/`.
