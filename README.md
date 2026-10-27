@@ -31,3 +31,5 @@ npm run dev
 ```
 
 Se abre en `http://localhost:5173/mi-portafolio-react/`.
+
+© 2025 José Luis Cuenca Gutiérrez. Todos los derechos reservados.
